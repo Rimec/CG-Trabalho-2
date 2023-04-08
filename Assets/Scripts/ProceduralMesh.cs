@@ -8,6 +8,7 @@ public class ProceduralMesh : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
     Vector2[] uvs;
+    Color[] colors;
     public int xSize = 20;
     public int zSize = 20;
 
@@ -54,12 +55,27 @@ public class ProceduralMesh : MonoBehaviour
             vert++;
         }
 
+        //Texture
+        /*
         uvs = new Vector2[vertices.Length];
         for (int i = 0, z = 0; z <= zSize; z++)
         {
             for (int x = 0; x <= xSize; x++)
             {
                 uvs[i] = new Vector2(x / (float)xSize, z / (float)zSize);
+                i++;
+            }
+        }
+        */
+
+        //VertexColor
+        colors = new Color[vertices.Length];
+        for (int i = 0, z = 0; z <= zSize; z++)
+        {
+            for (int x = 0; x <= xSize; x++)
+            {
+                float _height = vertices[i].y / height;
+                colors[i] = new Color(_height, _height, _height);
                 i++;
             }
         }
@@ -91,7 +107,9 @@ public class ProceduralMesh : MonoBehaviour
         mesh.Clear();
         mesh.vertices = vertices;
         mesh.triangles = triangles;
-        mesh.uv = uvs;
+        // Texture
+        // mesh.uv = uvs;
+        mesh.colors = colors;
         mesh.RecalculateNormals();
     }
 }
