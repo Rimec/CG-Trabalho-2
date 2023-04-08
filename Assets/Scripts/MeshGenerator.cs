@@ -9,13 +9,13 @@ public class MeshGenerator : MonoBehaviour
 
     public float height;
     public float entropy;
-    public Gradient gradient;
-    public GameObject box;
+    public Gradient principalGradient;
+    public GameObject voxelObject;
     void Start()
     {
         CreateMesh();
     }
-    void CreateMesh()
+    public void CreateMesh()
     {
         for (var z = 0; z < zSize; z++)
         {
@@ -25,10 +25,10 @@ public class MeshGenerator : MonoBehaviour
                 float noiseZ = (z / (float)zSize) * entropy;
                 float y = Mathf.PerlinNoise(noiseX, noiseZ) * height;
                 Vector3 pos = new Vector3(x, Mathf.Round(y), z);
-                GameObject obj = Instantiate(box, pos, Quaternion.identity);
+                GameObject obj = Instantiate(voxelObject, pos, Quaternion.identity);
                 obj.transform.SetParent(this.transform);
                 Material m = obj.GetComponent<MeshRenderer>().material;
-                m.color = gradient.Evaluate(y / this.height);
+                m.color = principalGradient.Evaluate(y / this.height);
             }
         }
     }
