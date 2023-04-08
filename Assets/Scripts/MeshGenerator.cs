@@ -26,6 +26,7 @@ public class MeshGenerator : MonoBehaviour
                 float y = Mathf.PerlinNoise(noiseX, noiseZ) * height;
                 Vector3 pos = new Vector3(x, Mathf.Round(y), z);
                 GameObject obj = Instantiate(box, pos, Quaternion.identity);
+                obj.transform.SetParent(this.transform);
                 Material m = obj.GetComponent<MeshRenderer>().material;
                 m.color = gradient.Evaluate(y / this.height);
             }
