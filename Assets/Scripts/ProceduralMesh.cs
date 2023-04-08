@@ -13,6 +13,7 @@ public class ProceduralMesh : MonoBehaviour
 
     public float height;
     public float entropy;
+    [SerializeField] private bool actualize;
     void Start()
     {
         mesh = new Mesh();
@@ -76,6 +77,14 @@ public class ProceduralMesh : MonoBehaviour
             1, 3, 2
         };
         */
+    }
+    private void Update()
+    {
+        if (actualize)
+        {
+            CreateShape();
+            UpdateShape();
+        }
     }
     private void UpdateShape()
     {
