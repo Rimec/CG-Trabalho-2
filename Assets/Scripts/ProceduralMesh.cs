@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProceduralMesh : MonoBehaviour
 {
-    Mesh mesh;
+    UnityEngine.Mesh mesh;
     Vector3[] vertices;
     int[] triangles;
     Vector2[] uvs;
@@ -18,7 +18,7 @@ public class ProceduralMesh : MonoBehaviour
     [SerializeField] private bool actualize;
     void Start()
     {
-        mesh = new Mesh();
+        mesh = new UnityEngine.Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         CreateShape();
         UpdateShape();
