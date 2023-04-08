@@ -14,6 +14,7 @@ public class ProceduralMesh : MonoBehaviour
 
     public float height;
     public float entropy;
+    public Gradient gradient;
     [SerializeField] private bool actualize;
     void Start()
     {
@@ -75,7 +76,8 @@ public class ProceduralMesh : MonoBehaviour
             for (int x = 0; x <= xSize; x++)
             {
                 float _height = vertices[i].y / height;
-                colors[i] = new Color(_height, _height, _height);
+
+                colors[i] = gradient.Evaluate(_height);
                 i++;
             }
         }
