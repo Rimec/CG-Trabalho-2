@@ -7,7 +7,11 @@ public class ProceduralMesh : MonoBehaviour
     Mesh mesh;
     Vector3[] vertices;
     int[] triangles;
-    // Start is called before the first frame update
+    public int xSize = 20;
+    public int zSize = 20;
+
+    public float height;
+    public float entropy;
     void Start()
     {
         mesh = new Mesh();
@@ -17,6 +21,39 @@ public class ProceduralMesh : MonoBehaviour
     }
     private void CreateShape()
     {
+        vertices = new Vector3[(xSize + 1) * (zSize + 1)];
+        for (int i = 0, z = 0; z <= zSize; z++)
+        {
+            for (int x = 0; x <= xSize; x++)
+            {
+                float noiseX = (x / (float)xSize) * entropy;
+                float noiseZ = (z / (float)zSize) * entropy;
+                float y = Mathf.PerlinNoise(noiseX, noiseZ) * height;
+                vertices[i] = new Vector3(x, y, z);
+                i++;
+            }
+        }
+        triangles = new int[xSize * zSize * 6];
+        int vert = 0;
+        int tris = 0;
+        for (int z = 0; z < zSize; z++)
+        {
+            for (int x = 0; x < xSize; x++)
+            {
+                triangles[tris + 0] = vert + 0;
+                triangles[tris + 1] = vert + xSize + 1;
+                triangles[tris + 2] = vert + 1;
+                triangles[tris + 3] = vert + 1;
+                triangles[tris + 4] = vert + xSize + 1;
+                triangles[tris + 5] = vert + xSize + 2;
+                vert++;
+                tris += 6;
+            }
+            vert++;
+        }
+
+        // HARD CODANDO
+        /*      
         vertices = new Vector3[]{
             new Vector3(0, 0, 0),
             new Vector3(0, 0, 1),
@@ -27,6 +64,7 @@ public class ProceduralMesh : MonoBehaviour
             0, 1, 2,
             1, 3, 2
         };
+        */
     }
     private void UpdateShape()
     {
