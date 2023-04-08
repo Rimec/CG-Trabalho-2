@@ -20,8 +20,8 @@ public class CreateVoxelModel : MonoBehaviour
             Destroy(o);
         }
 
-        box.transform.localScale = new Vector3(size, size, size);
-        // box.transform.localScale = Vector3.one * size;
+        // box.transform.localScale = new Vector3(size, size, size);
+        box.transform.localScale = Vector3.one * size;
         for (float y = -10; y < 10; y += size)
         {
             for (float x = -10; x < 10; x += size)
