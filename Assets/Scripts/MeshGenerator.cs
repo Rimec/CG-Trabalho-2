@@ -11,6 +11,8 @@ public class MeshGenerator : MonoBehaviour
     public float entropy;
     public Gradient principalGradient;
     public GameObject voxelObject;
+
+    private List<GameObject> generatedObjects = new();
     void Start()
     {
         CreateMesh();
@@ -26,10 +28,18 @@ public class MeshGenerator : MonoBehaviour
                 float y = Mathf.PerlinNoise(noiseX, noiseZ) * height;
                 Vector3 pos = new Vector3(x, Mathf.Round(y), z);
                 GameObject obj = Instantiate(voxelObject, pos, Quaternion.identity);
+                generatedObjects.Add(obj);
                 obj.transform.SetParent(this.transform);
                 Material m = obj.GetComponent<MeshRenderer>().material;
                 m.color = principalGradient.Evaluate(y / this.height);
             }
+        }
+    }
+    public void DestroyMesh()
+    {
+        foreach (GameObject go in generatedObjects)
+        {
+            Destroy(go);
         }
     }
 }
