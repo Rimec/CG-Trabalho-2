@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103.2, y: 0.000015259}
-  m_SizeDelta: {x: 34.7055, y: 34.705}
+  m_AnchoredPosition: {x: 99.1, y: -0.00017834}
+  m_SizeDelta: {x: 97.5736, y: 11.3593}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185620131
 MonoBehaviour:
@@ -2526,15 +2526,19 @@ MonoBehaviour:
   entropyButtonLess: {fileID: 549660104}
   objectButtonPlus: {fileID: 429417754}
   objectButtonLess: {fileID: 2066887532}
-  colorButtonPlus: {fileID: 0}
-  colorButtonLess: {fileID: 0}
+  colorButtonPlus: {fileID: 1270245559}
+  colorButtonLess: {fileID: 1797598307}
   objects:
   - {fileID: 3324885961739944267}
   - {fileID: 3324885962981733105}
   - {fileID: 3324885962120595734}
   - {fileID: 3324885963514920497}
-  gradient: {fileID: 0}
-  spriteGradients: []
+  gradient: {fileID: 185620131}
+  spriteGradients:
+  - {fileID: 21300000, guid: da1cf7a247a58dc4793b4362e8c4d90f, type: 3}
+  - {fileID: 21300000, guid: c91467aae088d5f47a85a91f04d0132b, type: 3}
+  - {fileID: 21300000, guid: bc2a9bdc3911fca4daf50a2242925e8f, type: 3}
+  - {fileID: 21300000, guid: c5b16547df77f534488eb4235ed6ec65, type: 3}
   xSizeText: {fileID: 1104884961}
   zSizeText: {fileID: 697142123}
   heightText: {fileID: 1712845298}

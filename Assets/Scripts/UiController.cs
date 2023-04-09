@@ -84,14 +84,14 @@ public class UiController : MonoBehaviour
         objectButtonPlus.onClick.AddListener(delegate { ChangeObjectIndex(+1); });
         objectButtonLess.onClick.AddListener(delegate { ChangeObjectIndex(-1); });
 
-        colorButtonPlus.onClick.AddListener(delegate { ChangeObjectIndex(+1); });
-        colorButtonLess.onClick.AddListener(delegate { ChangeObjectIndex(-1); });
+        colorButtonPlus.onClick.AddListener(delegate { ChangeGradient(+1); });
+        colorButtonLess.onClick.AddListener(delegate { ChangeGradient(-1); });
     }
 
     void GenerateMesh()
     {
         meshGenerator.DestroyMesh();
-        meshGenerator.ReciveValues(xSize, zSize, height, entropy, objects[objectIndex], gradientIndex);
+        meshGenerator.ReciveValues(xSize, zSize, height, entropy, objects[objectIndex],gradientIndex);
     }
 
     void ChangeXValue(int i)
@@ -123,8 +123,11 @@ public class UiController : MonoBehaviour
     }
     void ChangeObjectIndex(int i)
     {
+        if(objectIndex>=objects.Length-1 && i == +1) return;
+        if(objectIndex <=0 && i == -1) return;
+        
         objectIndex += i;
-
+        
         foreach (var o in objects)
             o.SetActive(false);
 
@@ -133,6 +136,9 @@ public class UiController : MonoBehaviour
 
     void ChangeGradient(int i)
     {
+        if(gradientIndex>=spriteGradients.Length-1 && i == +1) return;
+        if(gradientIndex <=0 && i == -1) return;
+        
         gradientIndex += i;
 
         gradient.sprite = spriteGradients[gradientIndex];
