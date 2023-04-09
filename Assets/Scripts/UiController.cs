@@ -16,9 +16,14 @@ public class UiController : MonoBehaviour
    [SerializeField] private Button heightButtonPlus, heightButtonLess;
    [SerializeField] private Button entropyButtonPlus, entropyButtonLess;
    [SerializeField] private Button objectButtonPlus, objectButtonLess;
+   [SerializeField] private Button colorButtonPlus, colorButtonLess;
 
    [Header("Object")] 
    [SerializeField] private GameObject[] objects;
+
+   [Header("Color")] 
+   [SerializeField] private Image gradient;
+   [SerializeField] private Sprite[] spriteGradients;
 
    [Header("Text")] 
    [SerializeField] private TextMeshProUGUI xSizeText, zSizeText;
@@ -30,6 +35,7 @@ public class UiController : MonoBehaviour
    private int xSize, zSize;
    private float height, entropy;
    private int objectIndex;
+   private int gradientIndex;
 
    #endregion
 
@@ -55,6 +61,9 @@ public class UiController : MonoBehaviour
 
       objectIndex = 0;
       ChangeObjectIndex(objectIndex);
+
+      gradientIndex = 0;
+      ChangeGradient(gradientIndex);
    }
    void AssingButtons()
    {
@@ -74,6 +83,9 @@ public class UiController : MonoBehaviour
       
       objectButtonPlus.onClick.AddListener(delegate { ChangeObjectIndex(+1);});
       objectButtonLess.onClick.AddListener(delegate { ChangeObjectIndex(-1);});
+      
+      colorButtonPlus.onClick.AddListener(delegate { ChangeObjectIndex(+1);});
+      colorButtonLess.onClick.AddListener(delegate { ChangeObjectIndex(-1);});
    }
 
    void GenerateMesh()
@@ -117,5 +129,12 @@ public class UiController : MonoBehaviour
          o.SetActive(false);
     
       objects[objectIndex].SetActive(true);
+   }
+
+   void ChangeGradient(int i)
+   {
+      gradientIndex += i;
+
+      gradient.sprite = spriteGradients[gradientIndex];
    }
 }
