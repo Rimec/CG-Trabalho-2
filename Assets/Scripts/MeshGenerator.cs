@@ -11,7 +11,8 @@ public class MeshGenerator : MonoBehaviour
     public float entropy;
     public Gradient principalGradient;
     public GameObject voxelObject;
-    
+    public Gradient[] gradients;
+
     private List<GameObject> generatedObjects = new();
     void Start()
     {
@@ -36,14 +37,15 @@ public class MeshGenerator : MonoBehaviour
         }
     }
 
-    public void ReciveValues(int x, int z, float h, float e, GameObject o)
+    public void ReciveValues(int x, int z, float h, float e, GameObject o, int g)
     {
         xSize = x;
         zSize = z;
         height = h;
         entropy = e;
         voxelObject = o;
-        
+        principalGradient = gradients[g];
+
         CreateMesh();
     }
     public void DestroyMesh()

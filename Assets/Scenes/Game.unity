@@ -149,7 +149,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185620129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c91467aae088d5f47a85a91f04d0132b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2276,8 +2276,8 @@ MonoBehaviour:
   entropy: 1
   principalGradient:
     serializedVersion: 2
-    key0: {r: 0, g: 0.509953, b: 1, a: 1}
-    key1: {r: 0.47564483, g: 1, b: 0, a: 1}
+    key0: {r: 0.035300255, g: 0, b: 1, a: 1}
+    key1: {r: 0.9829347, g: 1, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2304,6 +2304,119 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   voxelObject: {fileID: 3324885961739944267}
+  gradients:
+  - serializedVersion: 2
+    key0: {r: 0, g: 0.71327114, b: 1, a: 1}
+    key1: {r: 0, g: 1, b: 0.07596874, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0, g: 0.509953, b: 1, a: 1}
+    key1: {r: 0.7735849, g: 0.6604817, b: 0.507209, a: 1}
+    key2: {r: 0.4056604, g: 0.21246889, b: 0.13203098, a: 0}
+    key3: {r: 0.13011748, g: 0.6415094, b: 0.15672696, a: 0}
+    key4: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 9830
+    ctime2: 19468
+    ctime3: 36815
+    ctime4: 53006
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0.9559226, a: 1}
+    key1: {r: 0.47564483, g: 1, b: 0, a: 1}
+    key2: {r: 0.4056604, g: 0.21246889, b: 0.13203098, a: 0}
+    key3: {r: 0.13011748, g: 0.6415094, b: 0.15672696, a: 0}
+    key4: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 19468
+    ctime3: 36815
+    ctime4: 53006
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0.035300255, g: 0, b: 1, a: 1}
+    key1: {r: 0.9829347, g: 1, b: 0, a: 1}
+    key2: {r: 0.4056604, g: 0.21246889, b: 0.13203098, a: 0}
+    key3: {r: 0.13011748, g: 0.6415094, b: 0.15672696, a: 0}
+    key4: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 19468
+    ctime3: 36815
+    ctime4: 53006
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!1 &1434093768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,11 +2526,15 @@ MonoBehaviour:
   entropyButtonLess: {fileID: 549660104}
   objectButtonPlus: {fileID: 429417754}
   objectButtonLess: {fileID: 2066887532}
+  colorButtonPlus: {fileID: 0}
+  colorButtonLess: {fileID: 0}
   objects:
   - {fileID: 3324885961739944267}
   - {fileID: 3324885962981733105}
   - {fileID: 3324885962120595734}
   - {fileID: 3324885963514920497}
+  gradient: {fileID: 0}
+  spriteGradients: []
   xSizeText: {fileID: 1104884961}
   zSizeText: {fileID: 697142123}
   heightText: {fileID: 1712845298}
